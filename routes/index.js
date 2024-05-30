@@ -8,4 +8,3 @@ router.use(attendeeRouter);
 router.use(eventRouter);
 
 export default router;
-

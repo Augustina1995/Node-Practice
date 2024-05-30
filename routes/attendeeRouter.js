@@ -1,5 +1,10 @@
 import express from "express";
-import { addAttendee, deleteAttendeeById, getAttendees, updateAttendeeById } from "../controllers/attendeeController.js";
+import {
+  addAttendee,
+  deleteAttendeeById,
+  getAttendees,
+  updateAttendeeById,
+} from "../controllers/attendeeController.js";
 
 const router = express.Router();
 
