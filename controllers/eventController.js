@@ -30,15 +30,16 @@ export async function getEvents(req, res) {
   const { page, amount, eventName } = req.query;
 
   try {
-    let query = {};
-
+    // let query = {};
     // Filtering event by name
+    // This one is a bit complex
+    // if (eventName) {
+    //   query.name = { $regex: eventName, $options: "i" };
+    // }
 
-    if (eventName) {
-      query.name = { $regex: eventName, $options: "i" };
-    }
+    // Using this for simplicity
 
-    const events = await Event.find(query)
+    const events = await Event.find({ name: eventName })
       .select("-__v")
       .sort({ name: 1 })
       .limit(amount)
